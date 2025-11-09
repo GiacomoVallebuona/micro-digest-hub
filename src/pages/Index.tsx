@@ -8,28 +8,28 @@ import { Sparkles, TrendingUp, Newspaper, Award } from "lucide-react";
 const Index = () => {
   const sampleArticles = [
     {
-      title: "The Future of Sustainable Business Practices",
-      excerpt: "Discover how leading companies are transforming their operations to prioritize environmental sustainability while maintaining profitability.",
-      category: "Business",
-      readTime: "5 min read",
+      title: "El Futuro de las Prácticas Empresariales Sostenibles",
+      excerpt: "Descubre cómo las empresas líderes están transformando sus operaciones para priorizar la sostenibilidad ambiental mientras mantienen la rentabilidad.",
+      category: "Negocios",
+      readTime: "5 min",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80",
       slug: "future-sustainable-business",
       isPremium: true,
     },
     {
-      title: "Breaking: Tech Giants Announce Strategic Partnership",
-      excerpt: "Major technology companies join forces to develop next-generation AI solutions, marking a significant shift in the industry landscape.",
-      category: "News",
-      readTime: "4 min read",
+      title: "Última Hora: Gigantes Tecnológicos Anuncian Asociación Estratégica",
+      excerpt: "Las principales compañías tecnológicas unen fuerzas para desarrollar soluciones de IA de próxima generación, marcando un cambio significativo en el panorama de la industria.",
+      category: "Noticias",
+      readTime: "4 min",
       image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
       slug: "tech-giants-partnership",
       isPremium: false,
     },
     {
-      title: "5 Emerging Markets to Watch in 2024",
-      excerpt: "Financial experts reveal the most promising investment opportunities in rapidly developing economies around the globe.",
-      category: "Business",
-      readTime: "6 min read",
+      title: "5 Mercados Emergentes a Observar en 2024",
+      excerpt: "Expertos financieros revelan las oportunidades de inversión más prometedoras en economías en rápido desarrollo alrededor del mundo.",
+      category: "Negocios",
+      readTime: "6 min",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       slug: "emerging-markets-2024",
       isPremium: true,
@@ -39,23 +39,23 @@ const Index = () => {
   const features = [
     {
       icon: Newspaper,
-      title: "Daily Curated News",
-      description: "Stay informed with handpicked articles from trusted sources worldwide.",
+      title: "Noticias Curadas Diariamente",
+      description: "Mantente informado con artículos seleccionados de fuentes confiables de todo el mundo.",
     },
     {
       icon: TrendingUp,
-      title: "Business Insights",
-      description: "Deep dive into market trends and strategic business analysis.",
+      title: "Perspectivas de Negocios",
+      description: "Profundiza en las tendencias del mercado y análisis estratégicos empresariales.",
     },
     {
       icon: Sparkles,
-      title: "Something New",
-      description: "Discover fresh perspectives on innovation and emerging technologies.",
+      title: "Algo Nuevo",
+      description: "Descubre perspectivas frescas sobre innovación y tecnologías emergentes.",
     },
     {
       icon: Award,
-      title: "Premium Content",
-      description: "Access exclusive in-depth reports and expert commentary.",
+      title: "Contenido Premium",
+      description: "Accede a informes exclusivos en profundidad y comentarios de expertos.",
     },
   ];
 
@@ -68,21 +68,21 @@ const Index = () => {
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Learn Something New,{" "}
-              <span className="text-primary">Every Day</span>
+              Aprende Algo Nuevo,{" "}
+              <span className="text-primary">Cada Día</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Your daily dose of curated news and business insights. Join thousands of professionals staying ahead with micro-education.
+              Tu dosis diaria de noticias curadas y perspectivas empresariales. Únete a miles de profesionales que se mantienen a la vanguardia con micro-educación.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/auth">
                 <Button size="lg" className="bg-accent hover:bg-accent-hover text-accent-foreground px-8">
-                  Start Learning - S/15/month
+                  Comenzar a Aprender - S/15/mes
                 </Button>
               </Link>
-              <Link to="/price">
+              <Link to="/auth">
                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  View Plans
+                  Ver Planes
                 </Button>
               </Link>
             </div>
@@ -95,10 +95,10 @@ const Index = () => {
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Why Choose MicroLearn?
+              ¿Por Qué Elegir MicroLearn?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We deliver high-quality, curated content designed for busy professionals who value their time.
+              Entregamos contenido curado de alta calidad diseñado para profesionales ocupados que valoran su tiempo.
             </p>
           </div>
 
@@ -129,10 +129,10 @@ const Index = () => {
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Featured Articles
+              Artículos Destacados
             </h2>
             <p className="text-muted-foreground text-lg">
-              Explore our latest curated content
+              Explora nuestro último contenido curado
             </p>
           </div>
 
@@ -145,7 +145,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to="/news">
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                View All Articles
+                Ver Todos los Artículos
               </Button>
             </Link>
           </div>
@@ -156,14 +156,14 @@ const Index = () => {
       <section className="py-16 lg:py-24 bg-primary text-primary-foreground">
         <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Ready to Start Learning?
+            ¿Listo para Comenzar a Aprender?
           </h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Join our community and get access to premium content, exclusive insights, and daily curated news for just S/15 per month.
+            Únete a nuestra comunidad y obtén acceso a contenido premium, perspectivas exclusivas y noticias curadas diariamente por solo S/15 al mes.
           </p>
           <Link to="/auth">
             <Button size="lg" className="bg-accent hover:bg-accent-hover text-accent-foreground px-8">
-              Subscribe Now
+              Suscríbete Ahora
             </Button>
           </Link>
         </div>

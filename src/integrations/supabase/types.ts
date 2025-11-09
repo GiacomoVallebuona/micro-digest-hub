@@ -59,6 +59,111 @@ export type Database = {
         }
         Relationships: []
       }
+      dia_connections: {
+        Row: {
+          created_at: string
+          from_dia_id: string
+          id: string
+          to_dia_id: string
+        }
+        Insert: {
+          created_at?: string
+          from_dia_id: string
+          id?: string
+          to_dia_id: string
+        }
+        Update: {
+          created_at?: string
+          from_dia_id?: string
+          id?: string
+          to_dia_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "dia_connections_from_dia_id_fkey"
+            columns: ["from_dia_id"]
+            isOneToOne: false
+            referencedRelation: "dias"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "dia_connections_to_dia_id_fkey"
+            columns: ["to_dia_id"]
+            isOneToOne: false
+            referencedRelation: "dias"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      dias: {
+        Row: {
+          color: string | null
+          created_at: string
+          day_number: number
+          description: string
+          id: string
+          title: string
+          updated_at: string
+          x_position: number
+          y_position: number
+        }
+        Insert: {
+          color?: string | null
+          created_at?: string
+          day_number: number
+          description: string
+          id?: string
+          title: string
+          updated_at?: string
+          x_position?: number
+          y_position?: number
+        }
+        Update: {
+          color?: string | null
+          created_at?: string
+          day_number?: number
+          description?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          x_position?: number
+          y_position?: number
+        }
+        Relationships: []
+      }
+      new_articles: {
+        Row: {
+          author: string | null
+          content: string
+          created_at: string
+          hero_image_url: string | null
+          id: string
+          published_at: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string | null
+          content: string
+          created_at?: string
+          hero_image_url?: string | null
+          id?: string
+          published_at?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string | null
+          content?: string
+          created_at?: string
+          hero_image_url?: string | null
+          id?: string
+          published_at?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

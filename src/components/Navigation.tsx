@@ -7,10 +7,10 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Today's News", path: "/news" },
-    { name: "Something New", path: "/new" },
-    { name: "Business", path: "/business" },
-    { name: "Price", path: "/price" },
+    { name: "Noticias de Hoy", path: "/news" },
+    { name: "Algo Nuevo", path: "/new" },
+    { name: "Negocios", path: "/business" },
+    { name: "Días", path: "/days" },
   ];
 
   return (
@@ -34,7 +34,7 @@ const Navigation = () => {
             ))}
             <Link to="/auth" className="ml-4">
               <Button variant="default" className="bg-accent hover:bg-accent-hover text-accent-foreground">
-                Subscribe
+                Suscribirse
               </Button>
             </Link>
           </div>
@@ -60,7 +60,7 @@ const Navigation = () => {
             ))}
             <Link to="/auth" onClick={() => setIsOpen(false)}>
               <Button variant="default" className="w-full bg-accent hover:bg-accent-hover text-accent-foreground mt-2">
-                Subscribe
+                Suscribirse
               </Button>
             </Link>
           </div>

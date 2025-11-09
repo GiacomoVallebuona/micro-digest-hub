@@ -7,14 +7,14 @@ import { Check } from "lucide-react";
 
 const Price = () => {
   const features = [
-    "Unlimited access to all articles",
-    "Daily curated news digest",
-    "Exclusive business insights",
-    "Premium market analysis",
-    "Early access to new content",
-    "Ad-free reading experience",
-    "Mobile app access",
-    "Cancel anytime",
+    "Acceso ilimitado a todos los artículos",
+    "Resumen diario de noticias curadas",
+    "Perspectivas empresariales exclusivas",
+    "Análisis premium del mercado",
+    "Acceso anticipado a contenido nuevo",
+    "Experiencia de lectura sin anuncios",
+    "Acceso a la app móvil",
+    "Cancela en cualquier momento",
   ];
 
   return (
@@ -26,10 +26,10 @@ const Price = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Simple, Transparent Pricing
+              Precios Simples y Transparentes
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              One plan, unlimited learning. Cancel anytime, no questions asked.
+              Un plan, aprendizaje ilimitado. Cancela en cualquier momento, sin preguntas.
             </p>
           </div>
 
@@ -37,13 +37,13 @@ const Price = () => {
           <div className="max-w-lg mx-auto">
             <Card className="border-2 border-accent shadow-medium">
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">Premium Membership</CardTitle>
+                <CardTitle className="text-2xl mb-2">Membresía Premium</CardTitle>
                 <CardDescription className="text-base">
-                  Full access to all premium content
+                  Acceso completo a todo el contenido premium
                 </CardDescription>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-foreground">S/15</span>
-                  <span className="text-muted-foreground text-lg">/month</span>
+                  <span className="text-muted-foreground text-lg">/mes</span>
                 </div>
               </CardHeader>
 
@@ -61,11 +61,11 @@ const Price = () => {
               <CardFooter className="flex flex-col space-y-4">
                 <Link to="/auth" className="w-full">
                   <Button size="lg" className="w-full bg-accent hover:bg-accent-hover text-accent-foreground">
-                    Get Started Today
+                    Comienza Hoy
                   </Button>
                 </Link>
                 <p className="text-sm text-muted-foreground text-center">
-                  7-day money-back guarantee. No long-term contracts.
+                  Garantía de devolución de dinero de 7 días. Sin contratos a largo plazo.
                 </p>
               </CardFooter>
             </Card>
@@ -74,43 +74,43 @@ const Price = () => {
           {/* FAQ Section */}
           <div className="mt-20 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-foreground text-center mb-12">
-              Frequently Asked Questions
+              Preguntas Frecuentes
             </h2>
             
             <div className="space-y-6">
               <div className="bg-card p-6 rounded-lg border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Can I cancel my subscription anytime?
+                  ¿Puedo cancelar mi suscripción en cualquier momento?
                 </h3>
                 <p className="text-muted-foreground">
-                  Yes! You can cancel your subscription at any time with no penalties. Your access will continue until the end of your current billing period.
+                  ¡Sí! Puedes cancelar tu suscripción en cualquier momento sin penalizaciones. Tu acceso continuará hasta el final de tu período de facturación actual.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  What payment methods do you accept?
+                  ¿Qué métodos de pago aceptan?
                 </h3>
                 <p className="text-muted-foreground">
-                  We accept all major credit cards, debit cards, and digital payment methods for your convenience.
+                  Aceptamos todas las principales tarjetas de crédito, tarjetas de débito y métodos de pago digitales para tu conveniencia.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Is there a free trial available?
+                  ¿Hay una prueba gratuita disponible?
                 </h3>
                 <p className="text-muted-foreground">
-                  While we don't offer a traditional free trial, we do provide a 7-day money-back guarantee. If you're not satisfied within the first week, we'll refund your payment in full.
+                  Aunque no ofrecemos una prueba gratuita tradicional, sí proporcionamos una garantía de devolución de dinero de 7 días. Si no estás satisfecho dentro de la primera semana, te devolveremos el pago completo.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg border border-border">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  How often is new content published?
+                  ¿Con qué frecuencia se publica contenido nuevo?
                 </h3>
                 <p className="text-muted-foreground">
-                  We publish new curated content daily, with fresh articles, news updates, and business insights added every morning to keep you informed.
+                  Publicamos contenido curado nuevo diariamente, con artículos frescos, actualizaciones de noticias y perspectivas empresariales agregadas cada mañana para mantenerte informado.
                 </p>
               </div>
             </div>

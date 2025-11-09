@@ -53,7 +53,7 @@ const ArticleCard = ({ title, excerpt, category, readTime, image, slug, isPremiu
           to={`/article/${slug}`}
           className="inline-flex items-center text-primary hover:text-primary-light font-medium group/link"
         >
-          Read More
+          Leer Más
           <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
         </Link>
       </CardFooter>

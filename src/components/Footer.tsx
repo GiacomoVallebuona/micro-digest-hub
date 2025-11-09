@@ -15,32 +15,32 @@ const Footer = () => {
               <span className="text-xl font-bold text-primary">MicroLearn</span>
             </Link>
             <p className="text-muted-foreground text-sm">
-              Your daily dose of curated news and business insights. Learn something new every day.
+              Tu dosis diaria de noticias curadas y perspectivas empresariales. Aprende algo nuevo cada día.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/news" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Today's News
+                  Noticias de Hoy
                 </Link>
               </li>
               <li>
                 <Link to="/new" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Something New
+                  Algo Nuevo
                 </Link>
               </li>
               <li>
                 <Link to="/business" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Business
+                  Negocios
                 </Link>
               </li>
               <li>
-                <Link to="/price" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Pricing
+                <Link to="/auth" className="text-muted-foreground hover:text-primary text-sm transition-colors">
+                  Suscripción
                 </Link>
               </li>
             </ul>
@@ -48,26 +48,26 @@ const Footer = () => {
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Support</h3>
+            <h3 className="font-semibold text-foreground mb-4">Soporte</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  About Us
+                  Nosotros
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Contact
+                  Contacto
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  FAQ
+                  Preguntas Frecuentes
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                  Privacy Policy
+                  Política de Privacidad
                 </Link>
               </li>
             </ul>
@@ -75,7 +75,7 @@ const Footer = () => {
 
           {/* Newsletter & Social */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Stay Connected</h3>
+            <h3 className="font-semibold text-foreground mb-4">Mantente Conectado</h3>
             <div className="flex space-x-4 mb-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
@@ -91,14 +91,14 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-muted-foreground text-sm">
-              Subscribe to our newsletter for exclusive content and updates.
+              Suscríbete a nuestro boletín para contenido exclusivo y actualizaciones.
             </p>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-center text-muted-foreground text-sm">
-            © {currentYear} MicroLearn. All rights reserved.
+            © {currentYear} MicroLearn. Todos los derechos reservados.
           </p>
         </div>
       </div>
