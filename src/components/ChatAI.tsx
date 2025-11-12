@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
   role: "user" | "assistant";
@@ -28,19 +29,12 @@ const ChatAI = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5678/webhook-test/1baba53b-0554-420b-8723-0f1a3bdff13b", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: userMessage }),
+      // Call edge function instead of webhook directly
+      const { data, error } = await supabase.functions.invoke('send-to-webhook', {
+        body: { message: userMessage }
       });
 
-      if (!response.ok) {
-        throw new Error("Error al enviar el mensaje");
-      }
-
-      const data = await response.json();
+      if (error) throw error;
       
       // Add AI response
       setMessages(prev => [...prev, { 
