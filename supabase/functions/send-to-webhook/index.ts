@@ -16,7 +16,7 @@ serve(async (req) => {
     console.log('Received message:', message);
 
     // Send to webhook
-    const webhookUrl = "http://localhost:5678/webhook-test/1baba53b-0554-420b-8723-0f1a3bdff13b";
+    const webhookUrl = "http://localhost:5678/webhook-test/bd33308e-cbe2-41e9-b304-be069d3e901a";
     
     const response = await fetch(webhookUrl, {
       method: "POST",
