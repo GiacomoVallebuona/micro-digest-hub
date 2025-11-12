@@ -4,11 +4,19 @@ import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
+
+const messageSchema = z.object({
+  message: z.string()
+    .trim()
+    .min(1, "El mensaje no puede estar vacío")
+    .max(1000, "El mensaje es muy largo (máximo 1000 caracteres)")
+});
 
 const ChatAI = () => {
   const [messages, setMessages] = useState<Message[]>([
@@ -21,35 +29,47 @@ const ChatAI = () => {
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    const userMessage = input.trim();
-    setInput("");
-    
-    // Add user message
-    setMessages(prev => [...prev, { role: "user", content: userMessage }]);
-    setIsLoading(true);
-
+    // Validate input
     try {
-      // Call edge function instead of webhook directly
-      const { data, error } = await supabase.functions.invoke('send-to-webhook', {
-        body: { message: userMessage }
-      });
-
-      if (error) throw error;
+      const validated = messageSchema.parse({ message: input });
+      const userMessage = validated.message;
+      setInput("");
       
-      // Add AI response
-      setMessages(prev => [...prev, { 
-        role: "assistant", 
-        content: data.message || data.response || "Respuesta recibida" 
-      }]);
+      // Add user message
+      setMessages(prev => [...prev, { role: "user", content: userMessage }]);
+      setIsLoading(true);
+
+      try {
+        // Call edge function
+        const { data, error } = await supabase.functions.invoke('send-to-webhook', {
+          body: { message: userMessage }
+        });
+
+        if (error) throw error;
+        
+        // Add AI response
+        setMessages(prev => [...prev, { 
+          role: "assistant", 
+          content: data.message || data.response || "Respuesta recibida" 
+        }]);
+      } catch (error) {
+        console.error("Error:", error);
+        toast({
+          title: "Error",
+          description: "No se pudo enviar el mensaje. Por favor, intenta de nuevo.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLoading(false);
+      }
     } catch (error) {
-      console.error("Error:", error);
-      toast({
-        title: "Error",
-        description: "No se pudo enviar el mensaje. Por favor, intenta de nuevo.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
+      if (error instanceof z.ZodError) {
+        toast({
+          title: "Error de validación",
+          description: error.errors[0].message,
+          variant: "destructive",
+        });
+      }
     }
   };
 
@@ -101,22 +121,28 @@ const ChatAI = () => {
         </div>
 
         {/* Input */}
-        <div className="flex gap-2">
-          <Input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={handleKeyPress}
-            placeholder="Escribe tu mensaje..."
-            disabled={isLoading}
-            className="flex-1"
-          />
-          <Button
-            onClick={sendMessage}
-            disabled={isLoading || !input.trim()}
-            size="icon"
-          >
-            <Send className="h-4 w-4" />
-          </Button>
+        <div className="space-y-2">
+          <div className="flex gap-2">
+            <Input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Escribe tu mensaje..."
+              disabled={isLoading}
+              className="flex-1"
+              maxLength={1000}
+            />
+            <Button
+              onClick={sendMessage}
+              disabled={isLoading || !input.trim()}
+              size="icon"
+            >
+              <Send className="h-4 w-4" />
+            </Button>
+          </div>
+          <p className="text-xs text-muted-foreground text-right">
+            {input.length}/1000 caracteres
+          </p>
         </div>
       </div>
     </div>
