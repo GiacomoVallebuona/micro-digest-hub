@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ChatAI from "@/components/ChatAI";
 import { supabase } from "@/integrations/supabase/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -144,6 +145,13 @@ const New = () => {
             </div>
           )}
         </article>
+
+        {/* Chat AI */}
+        {article && (
+          <div className="px-4 sm:px-6 lg:px-8">
+            <ChatAI />
+          </div>
+        )}
       </main>
 
       <Footer />
